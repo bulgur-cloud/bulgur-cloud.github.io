@@ -2,7 +2,7 @@ on:
   pull_request:
     branches:
       - "*"
-name: check
+name: Check docs build
 jobs:
   site-builds:
     runs-on: ubuntu-latest
