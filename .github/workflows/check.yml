@@ -7,11 +7,12 @@ jobs:
   site-builds:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: nschloe/action-cached-lfs-checkout@v1
+      - run: git lfs checkout
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/gallium
-          cache: "yarn"
-          cache-dependency-path: "bulgur-cloud-frontend/yarn.lock"
+          node-version: lts/hydrogen
+          cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn build

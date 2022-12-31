@@ -7,12 +7,13 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: nschloe/action-cached-lfs-checkout@v1
+      - run: git lfs checkout
       - uses: actions/setup-node@v3
         with:
           node-version: lts/hydrogen
-          cache: "yarn"
-          cache-dependency-path: "yarn.lock"
+          cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - name: Upload artifact
