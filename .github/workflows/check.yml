@@ -1,0 +1,17 @@
+on:
+  pull_request:
+    branches:
+      - "*"
+name: check
+jobs:
+  site-builds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/gallium
+          cache: "yarn"
+          cache-dependency-path: "bulgur-cloud-frontend/yarn.lock"
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
