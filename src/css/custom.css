@@ -63,3 +63,11 @@
 [data-theme='dark'] .breadcrumbs__link {
   --ifm-breadcrumb-color-active: var(--ifm-color-primary);
 }
+mark {
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+[data-theme='dark'] mark {
+  background-color: var(--ifm-color-primary-darkest);
+}
