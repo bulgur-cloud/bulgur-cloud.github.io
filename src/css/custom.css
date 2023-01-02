@@ -71,3 +71,10 @@ mark {
 [data-theme='dark'] mark {
   background-color: var(--ifm-color-primary-darkest);
 }
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
