@@ -26,5 +26,29 @@ with underscores.
 export OTEL_META_X_HONEYCOMB_TEAM="your api key here"
 export OTEL_META_X_HONEYCOMB_DATASET="pick a dataset name"
 export OTEL_SERVICE_NAME="pick a service name"
-export OTEL_EXPORTER_OTLP_ENDPOINT="https://api.honeycomb.io/v1/traces"
+export OTEL_EXPORTER_OTLP_ENDPOINT="https://api.honeycomb.io/"
+```
+
+## Troubleshooting
+
+### Data is not getting exported with the Docker container
+
+There is an [outstanding issue](https://github.com/bulgur-cloud/bulgur-cloud/issues/135) with the docker container when trying to use telemetry.
+Because the Bulgur Cloud container is very minimal, it doesn't include SSL certificates. This means the exporter can't verify the
+certificate of the endpoint you are exporting to, which causes it to fail. If this is happening to you, you might see an error like "error trying to connect: invalid certificate: UnknownIssuer"
+although the error can be hard to see between all the other log output.
+
+You can work around this issue by mounting the SSL certificates from the host system to the container. For example, on ArchLinux you can mount `/etc/ssl` and `/etc/ca-certificates` to the container.
+With a `docker-compose.yml`:
+
+```yml
+ bulgur-cloud:
+    image: seriousbug/bulgur-cloud
+    volumes:
+    ...
+        # These 2 are needed to give the container access to the SSL certificates.
+        # The certificates may be located somewhere else on your system.
+      - /etc/ssl:/etc/ssl:ro
+      - /etc/ca-certificates:/etc/ca-certificates:ro
+    ...
 ```
