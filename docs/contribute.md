@@ -9,10 +9,13 @@ There are several ways you can contribute to Bulgur Cloud in.
 
 ## Suggestions, ideas, questions
 
-You can use the
-[Discussions](https://github.com/bulgur-cloud/bulgur-cloud/discussions) board to
-talk about any ideas you have about Bulgur Cloud, ask questions, or just chat
-with people.
+We have a Gitter community where you can ask questions, share ideas, discuss
+Bulgur Cloud, or keep up with development. You can [join on matrix](https://matrix.to/#/#bulgur-cloud_community:gitter.im).
+
+## Bug reports
+
+If you encounter bugs, you can [report bugs on Github](https://github.com/bulgur-cloud/bulgur-cloud/issues/new).
+You're not sure it's a bug? Ask on our [gitter.im](https://matrix.to/#/#bulgur-cloud_community:gitter.im) community!
 
 ## Documentation
 
