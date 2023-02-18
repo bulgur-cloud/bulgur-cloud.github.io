@@ -1,8 +1,12 @@
-# Website
+# Bulgur Cloud Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The Bulgur Cloud docs are built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+
+This is automatically published to https://bulgur-cloud.github.io/
 
 ### Installation
+
+Clone the repository, then use yarn to install the dependencies.
 
 ```
 $ yarn
