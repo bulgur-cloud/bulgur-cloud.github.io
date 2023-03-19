@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Screenshot from "@site/src/components/Screenshot";
+import Themes from "@site/src/components/Themes";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
@@ -58,6 +59,7 @@ export default function Home() {
         <WhatIs />
         <Screenshot />
         <HomepageFeatures />
+        <Themes />
       </main>
     </Layout>
   );
