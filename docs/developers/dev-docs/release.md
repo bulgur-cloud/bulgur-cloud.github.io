@@ -1,14 +1,17 @@
 ---
 title: Release
 ---
-The release process is fully automated. To release a new version, use the
-`./bump-version.sh` script with what kind of version bump you would like from
-`patch`, `minor`, or `major`. For example, `bash ./bump-version.sh minor`.
+The release process is mostly automated. To release a new version, run the `./make-release-branch.sh` script with what kind of version bump you would like from
+`patch`, `minor`, or `major`. For example, `bash ./make-release-branch.sh minor`.
 
-This script will bump up the version number, then create a commit and a tag for
-the release. You must push both of these, use `git push` then `git push --tags`.
+This script will create a new release branch,
+bump up the version number in the codebase,
+then commit it. You must push this branch with `git push`.
 
-The CI system is triggered by the tag. Once the tag is pushed, you should see
-the release workflow automatically build, test, and upload the new version. If
-the release workflow fails, you should be able to delete the offending tag, push
-out the corrections, then push a new tag.
+The release workflow is triggered by the branch. Once the branch is pushed, you
+should see the release workflow automatically build and test the release. The
+workflow will then push the containers to ghcr.io and Docker Hub, and create a
+Github release.
+
+If the release workflow fails, you can push corrections to the release branch.
+The release workflow will re-run.
