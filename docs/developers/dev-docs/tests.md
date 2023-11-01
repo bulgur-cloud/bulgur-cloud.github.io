@@ -18,7 +18,7 @@ to contribute.
 ## E2E
 
 There are Playwright powered end to end tests under the `frontend` folder.
-To run them, first start the backend server yourself. Then, run them with `pnpm run test`.
+To run them, first start the backend server yourself. Then, run them with `npm run test`.
 
 You can also run them with the Playwright extension in VSCode. Open any e2e test
 file under `frontend/tests`, and you should see run and debug options in the

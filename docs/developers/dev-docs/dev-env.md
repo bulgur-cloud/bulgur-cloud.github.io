@@ -52,8 +52,9 @@ you'll need to install a few things first.
 
 - Rust. The best place to start is [rustup.rs](https://rustup.rs/).
 - [cargo-watch](https://github.com/watchexec/cargo-watch#install)
-- [Nodejs](https://nodejs.org/en/), and [yarn](https://yarnpkg.com/getting-started/install).
+- [Nodejs](https://nodejs.org/en/)
 - [bunyan](https://www.npmjs.com/package/bunyan#installation)
+- [sea-orm-cli](https://crates.io/crates/sea-orm-cli)
 
 Once you have everything installed, clone the [Bulgur Cloud repository](https://github.com/bulgur-cloud/bulgur-cloud).
 
@@ -68,8 +69,8 @@ cargo watch -s 'cargo run | bunyan'
 In a different terminal, open the `bulgur-cloud-frontend` folder and run:
 
 ```sh
-yarn install
-yarn run web
+npm install
+npm run web
 ```
 
 The frontend should pop open in your browser, or you can navigate to `http://localhost:19006/` yourself.
